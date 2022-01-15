@@ -1,4 +1,3 @@
-import sys
 from moviepy.editor import *
 import pygame
 import os
@@ -472,3 +471,4 @@ while True:
     anim_sprite.update()
     pygame.display.flip()
     clock.tick(FPS)
+
