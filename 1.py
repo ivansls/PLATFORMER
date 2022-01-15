@@ -305,20 +305,6 @@ def generate_level(level):
     return new_player, x, y
 
 
-class Witch(pygame.sprite.Sprite):
-    dx = (tile_width - player_image.get_width()) // 2
-    dy = (tile_height - player_image.get_height()) // 4
-
-    def __init__(self, pos_x, pos_y):
-        super().__init__(anim_sprite)
-        self.image = witch1
-        self.rect = self.image.get_rect().move(tile_width * pos_x + Player.dx,
-                                               tile_height * (pos_y - 0.5) + Player.dy)
-
-    def update(self, *args, **kwargs):
-        AnimatedSprite(witch1, 1, 6, self.rect[0], self.rect[-1], 10)
-
-
 all_sprites = pygame.sprite.Group()
 player_group = pygame.sprite.Group()
 tiles_group = pygame.sprite.Group()
@@ -405,7 +391,6 @@ def draw():
     spr_KingIdle_strip_no_bkg = load_image("anim/spr_KingIdle_strip_no_bkg.png")
     spr_KingIdle_strip_no_bkg2 = pygame.transform.scale(spr_KingIdle_strip_no_bkg, (4608, 256))
     wizard = load_image("anim/wizard.png")
-    wizard2 = pygame.transform.scale(wizard, (2079, 285))
     img = load_image("anim/spritesheet.png")
     img2 = pygame.transform.scale(img, (300, 100))
     AnimatedSprite(img2, 3, 1, 210, 800, 4)
